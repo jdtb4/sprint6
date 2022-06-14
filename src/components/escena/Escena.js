@@ -1,29 +1,34 @@
 import styled from "styled-components";
+import Phrases from "../escena/Phrases";
 
-export const StyledEscena = styled.p` 
+const StyledEscena = styled.li` 
         text-align: center;
         padding: 15px;
         border: 2px solid black;
         border-radius: 100px;
+        list-style: none;
+
+        background-color: ${props => props.active ? "pink" : "white"};
     
-        &:active {
-            background-color: pink;
-        }
 `;
+const StyledList = styled.ul`
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    `;
 
-const Escena = [
-    {
-        text: "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial"
-    },
-    {
-        text: "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes."
-    },
-    {
-        text: "L'heroi va decidir travessar la porta que el portava a casa"
-    },
-    {
-        text: "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ..."
-    },
-];
+const Escena = () => {
+    return (
+        <StyledList>
+            {Phrases.map(phrase => (
+                <StyledEscena key={phrase.id} active = {false}>
+                    {phrase.text}
+                </StyledEscena>
+            ))}
+        </StyledList>
+    );
+}
 
+ 
 export default Escena;

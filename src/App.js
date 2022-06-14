@@ -1,18 +1,22 @@
-import Escena, { StyledEscena } from './components/escena/Escena';
-import GlobalStyle from './components/styles/styles';
-//import { useState } from 'react';
+import Escena from './components/escena/Escena';
+import GlobalStyle from './components/styles/Styles';
+import { useState } from 'react';
 import Buttons from './components/buttons/Buttons';
 
 const App = () => {
-    return ( 
+    const [dato, setDato] = useState(0);
+    const onClickNext = () => {
+        setDato(dato+1)
+    }
+    const onClickPrevious = () => {
+        setDato(dato-1)
+    }
+    console.log(dato);
+    return (
         <>
-        <Buttons />
+        <Buttons onClickPrevious={onClickPrevious} onClickNext={onClickNext} />
         <GlobalStyle />
-        <div>
-            {Escena.map((Escena, index) => {
-                return <StyledEscena key={index}>{Escena.text}</StyledEscena>}
-            )}  
-        </div>
+        <Escena />
         </>
     );
 }

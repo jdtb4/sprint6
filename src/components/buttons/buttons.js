@@ -4,8 +4,8 @@ export const StyledButtons = styled.button`
         width: 50%; 
         padding: 15px;
         font-size: 1.5rem;
-        border-radius: 15px;
-        border: 1px solid black;
+        border-radius: 100px;
+        border: 2px solid black;
 
         &&:hover {
             cursor: pointer;
@@ -13,11 +13,11 @@ export const StyledButtons = styled.button`
         }
 `;
 
-const Buttons = () => {
+const Buttons = ({onClickNext, onClickPrevious}) => {
     return (
         <>
-        <StyledButtons>Anterior</StyledButtons>
-        <StyledButtons>Següent</StyledButtons>
+        <StyledButtons onClick={onClickPrevious}>Anterior</StyledButtons>
+        <StyledButtons onClick={onClickNext}>Següent</StyledButtons>
         </>
     );
 }
