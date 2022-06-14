@@ -1,3 +1,16 @@
+import styled from "styled-components";
+
+export const StyledEscena = styled.p` 
+        text-align: center;
+        padding: 15px;
+        border: 2px solid black;
+        border-radius: 100px;
+    
+        &:active {
+            background-color: pink;
+        }
+`;
+
 const Escena = [
     {
         text: "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial"
