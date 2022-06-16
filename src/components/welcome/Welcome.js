@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   width: 150px;
   height: 50px;
   font-family: "sans-serif";
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: 1px solid black;
   border-radius: 100px;
 
@@ -40,19 +40,26 @@ const StyledText = styled.h1`
     transition: all 0.3s;
   }
 `;
+const StyledParagraph = styled.p`
+  font-family: "sans-serif";
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 600px;
+`;
 const Welcome = ({ joined, setJoined }) => {
   return (
     <>
       {joined === false ? (
         <StyledWelcome>
           <StyledText>¡Benvingut a l'historieta del nostre heroi!</StyledText>
-          <p className="Description">
+          <StyledParagraph className="Description">
             A continuació veuràs una historieta amb frases i il·lustracions
             creada amb React i Styled-Components. Per iniciar, clica al botó de
             "Començar" i passaràs a una altra pantalla on podràs veure com
             clicant a cada botó canvia l'estat de cada línia de la historieta i
             la seva il·lustració.
-          </p>
+          </StyledParagraph>
           <StyledButton onClick={() => setJoined(true)}>Començar</StyledButton>
         </StyledWelcome>
       ) : (

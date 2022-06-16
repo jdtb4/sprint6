@@ -11,7 +11,7 @@ export const StyledButtons = styled.button`
 
   &&:hover {
     cursor: pointer;
-    background-color: pink;
+    background-color: rgba(238, 138, 185, 0.2);
   }
 `;
 const Buttons = ({ onClickNext, onClickPrevious }) => {
